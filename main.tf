@@ -35,7 +35,7 @@ resource "aws_security_group" "ERIE-ec2_sg" {
 }
 
 # EC2 instance
-resource "aws_instance" "ERIE-EC2-Instance" {
+resource "aws_instance" "erie-ec2-Instance" {
   ami           = "ami-02ddb77f8f93ca4ca"  # Replace with your AMI ID
   instance_type = "t2.micro"  # Adjust instance type if necessary
   security_groups = [aws_security_group.ERIE-ec2_sg.name]
@@ -46,8 +46,8 @@ resource "aws_instance" "ERIE-EC2-Instance" {
   }
 }
 
-resource "aws_s3_bucket" "ERIE_s3_State_bucket" {
-  bucket_prefix = "ERIE-s3"  # Replace with a unique bucket name
+resource "aws_s3_bucket" "erie_s3_State_bucket" {
+  bucket_prefix = "erie-s3"  # Replace with a unique bucket name
   acl    = "private"  # You can change this to 'public-read', 'private', etc.
 
   # Optional: Versioning
@@ -57,7 +57,7 @@ resource "aws_s3_bucket" "ERIE_s3_State_bucket" {
 
   # Optional: Tags
   tags = {
-    Name        = "ERIE S3 Bucket"
+    Name        = "erie S3 Bucket"
     Environment = "Dev"
   }
 }
