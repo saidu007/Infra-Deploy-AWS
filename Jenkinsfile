@@ -9,12 +9,12 @@ pipeline {
                git branch: 'main', credentialsId: 'Git-credentials', url: 'https://github.com/saidu007/Infra-Deploy-AWS.git'
             }
         }
-       /* stage('Terraform Init') {
+        stage('Terraform Init') {
             steps {
                 sh "terraform init"
             }
         }
-        stage('Terraform Plan') {
+       /* stage('Terraform Plan') {
             steps {
                 sh "terraform plan"
             }
