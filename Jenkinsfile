@@ -7,7 +7,7 @@ pipeline {
 	stages {
 		stage('Git checkout') {
 			steps {
-			check out scm
+			git credentialsId: 'Git-credentials', url: 'https://github.com/saidu007/Infra-Deploy-AWS.git'
 			}
 		}
 		stage('Terraform init') {
