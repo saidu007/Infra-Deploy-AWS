@@ -14,6 +14,11 @@ pipeline {
                 sh "terraform init"
             }
         }
+         stage('Terraform Init') {
+            steps {
+                sh "terraform validate"
+            }
+        }
        /* stage('Terraform Plan') {
             steps {
                 sh "terraform plan"
